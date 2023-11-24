@@ -215,19 +215,21 @@ class DataTransformation:
             )
       
             sc=StandardScaler()
-            X_train=sc.fit_transform(X_train)
-            X_test=sc.transform(X_test)
+            X_train=pd.DataFrame(sc.fit_transform(X_train))
+            X_test=pd.DataFrame(sc.transform(X_test))
             logging.info("Feature scaling completed")
 
-            pd.DataFrame(X_train).to_csv(self.data_transformation_config.ft_train_data_path,index=False,header=True)
-            pd.DataFrame(X_test).to_csv(self.data_transformation_config.ft_test_data_path,index=False,header=True)
+            X_train.to_csv(self.data_transformation_config.ft_train_data_path,index=False,header=True)
+            X_test.to_csv(self.data_transformation_config.ft_test_data_path,index=False,header=True)
             
             
 
             return(
                 self.data_transformation_config.preprocessor_obj_file_path,
                 X_train,
+                y_train,
                 X_test,
+                y_test
             )
         except Exception as e:
             raise CustomException(e,sys)
