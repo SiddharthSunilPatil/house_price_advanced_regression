@@ -12,7 +12,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor
 from sklearn.neural_network import MLPRegressor
 from sklearn.linear_model import LinearRegression,SGDRegressor
-from sklearn.model_selection import RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV,GridSearchCV
 from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 import warnings
@@ -43,6 +43,8 @@ class ModelTrainer:
                 "MLPRegressor":MLPRegressor(),
             }
 
+            
+
             model_performance=evaluate_models(models,X_train,y_train)
             logging.info("Evaluation of models completed")
 
@@ -54,10 +56,10 @@ class ModelTrainer:
             best_model=models[best_model_name]
             logging.info("Best model found")
 
-            print(best_model_name)
-            print(best_model_score)
+            print("The best model is:",best_model_name)
+            print("RMSE for the model is:",best_model_score)
 
-            
+    
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=best_model  
@@ -65,8 +67,60 @@ class ModelTrainer:
 
             return(
                 best_model_score,
-                best_model_name
+                best_model_name,
+                best_model
             )
         
         except Exception as e:
             CustomException(e,sys)
+
+    def hyperparameter_tuning(self,model,model_name,X_train,y_train):
+        try:
+            logging.info("Entered the hyperparameter tuning method")
+            params={
+                "LinearRegression":{},
+                "SVR":{},
+                "SGDRegressor":{},
+                "KNeighborsRegressor":{},
+                "GaussianProcessRegressor":{},
+                "DecisionTreeRegressor":{
+                                        'criterion':['squared_error'],
+                                        'max_features':['sqrt']
+                                        },
+                "GradientBoostingRegressor":{
+                                            'criterion': ['squared_error'],
+                                            'learning_rate': [0.5, 0.1, 0.05, 0.01],
+                                            'max_depth': [5, 8, 10], 
+                                            'max_features': ['sqrt'],
+                                            'n_estimators': [8,16,32,64,128,256,512]
+                                            },
+                "RandomForestRegressor":{
+                                        'criterion':['squared_error'],
+                                        'n_estimators':[8,16,32,64,128,256,512]
+                                        },
+                "XGBRegressor":{'eval_metric':['rmse'],
+                                'learning_rate':[.1,.01,.05,.001],
+                                'n_estimators': [8,16,32,64,128,256,512]
+                                },
+                "MLPRegressor":{},
+
+            }
+
+            model_tuned=GridSearchCV(model,params[model_name],cv=5)
+            model_tuned.fit(X_train,y_train)
+
+            model=model.set_params(**model_tuned.best_params_)
+            model.fit(X_train,y_train)
+            logging.info("Hyperparameter tuning & fitting of model completed")
+
+            tuned_model_dict={}
+            tuned_model_dict[model_name]=model
+
+            tuned_model_perf=evaluate_models(tuned_model_dict,X_train,y_train)
+
+            print("RMSE of tuned model:",tuned_model_perf.iloc[0][2])
+            print("R2 score of tuned model:",tuned_model_perf.iloc[0][1])
+
+        except Exception as e:
+            raise CustomException(e,sys)
+            

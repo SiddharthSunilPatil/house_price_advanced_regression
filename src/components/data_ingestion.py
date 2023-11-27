@@ -49,7 +49,10 @@ if __name__=="__main__":
     _,X_train,y_train,X_test,y_test=data_transformation.initiate_data_transformation(concat_path)
 
     model_trainer=ModelTrainer()
-    model_trainer.initiate_model_trainer(X_train,y_train)
+    _,model_name,model=model_trainer.initiate_model_trainer(X_train,y_train)
+    model_trainer.hyperparameter_tuning(model,model_name,X_train,y_train)
+
+
     
 
     
