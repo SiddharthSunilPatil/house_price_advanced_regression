@@ -48,7 +48,7 @@ class ModelTrainer:
             model_performance=evaluate_models(models,X_train,y_train)
             logging.info("Evaluation of models completed")
 
-            model_performance.to_csv(self.model_trainer_config.model_performace_file_path)
+            #model_performance.to_csv(self.model_trainer_config.model_performace_file_path)
 
             best_model_score=model_performance.iloc[0][2]
             best_model_name=model_performance.iloc[0][0]

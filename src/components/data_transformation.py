@@ -91,59 +91,74 @@ class DataTransformation:
             pipeline_one=Pipeline(
                 steps=[
                     ("numeric to categorical converter",numeric_cat_converter()),
-                    ("Nominal encoding",OneHotEncoder())
+                    ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
+                    ("Standard Scaler",StandardScaler(with_mean=False))
                 ]
             )
 
             pipeline_two=Pipeline(
                 steps=[
                     ("Imputer",SimpleImputer(strategy="most_frequent")),
-                    ("Nominal encoding",OneHotEncoder())
+                    ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
+                    ("Standard Scaler",StandardScaler(with_mean=False))
                 ]
             )
 
             pipeline_three=Pipeline(
                 steps=[
-                    ("Imputer",SimpleImputer(strategy="median"))
+                    ("Imputer",SimpleImputer(strategy="median")),
+                    ("Standard Scaler",StandardScaler(with_mean=False))
+                ]
+            )
+
+            pipeline_four=Pipeline(
+                steps=[
+                    ("Standard Scaler",StandardScaler(with_mean=False))
                 ]
             )
 
             pipeline_five=Pipeline(
                 steps=[
-                    ("Nominal encoding",OneHotEncoder())
+                    ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
+                    ("Standard Scaler",StandardScaler(with_mean=False))
                 ]
             )
 
             pipeline_six=Pipeline(
                 steps=[
                     ("Imputer",SimpleImputer(strategy="most_frequent")),
-                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_six_categories))   
+                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_six_categories,handle_unknown='use_encoded_value', unknown_value=-1)),
+                    ("Standard Scaler",StandardScaler(with_mean=False))   
                 ]
             )
 
             pipeline_seven=Pipeline(
                 steps=[
-                    ("Imputer",SimpleImputer(strategy="constant",fill_value=0))  
+                    ("Imputer",SimpleImputer(strategy="constant",fill_value=0)),
+                    ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]
             )
 
             pipeline_eight=Pipeline(
                 steps=[
-                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_eight_categories))  
+                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_eight_categories,handle_unknown='use_encoded_value', unknown_value=-1)),
+                    ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]
             )
 
             pipeline_nine=Pipeline(
                 steps=[
                     ("Imputer",SimpleImputer(strategy="constant",fill_value="NA")),
-                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_nine_categories))  
+                    ("Ordinal encoding",OrdinalEncoder(categories=pipeline_nine_categories,handle_unknown='use_encoded_value', unknown_value=-1)),
+                    ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]
             )
 
             pipeline_ten=Pipeline(
                 steps=[
                     ("Imputer",SimpleImputer(strategy="constant",fill_value="NA")),
-                    ("Nominal encoding",OneHotEncoder())  
+                    ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
+                    ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]
             )
 
@@ -151,7 +166,8 @@ class DataTransformation:
                 steps=[
                     ("Imputer",SimpleImputer(strategy="constant",fill_value=0)),
                     ("numeric to categorical converter",numeric_cat_converter()),
-                    ("Nominal encoding",OneHotEncoder())  
+                    ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
+                    ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]
             )
 
@@ -160,6 +176,7 @@ class DataTransformation:
                  ("Pipeline1",pipeline_one,pipeline_one_columns),
                  ("Pipeline2",pipeline_two,pipeline_two_columns),
                  ("Pipeline3",pipeline_three,pipeline_three_columns),
+                 ("Pipeline4",pipeline_four,pipeline_four_columns),
                  ("Pipeline5",pipeline_five,pipeline_five_columns),
                  ("Pipeline6",pipeline_six,pipeline_six_columns),
                  ("Pipeline7",pipeline_seven,pipeline_seven_columns),
@@ -188,24 +205,29 @@ class DataTransformation:
             concat_df=concat_df.drop(["SalePrice"],axis=1)
             logging.info("Separation of target variable completed")
 
+            logging.info("Entered the data split method")
+            len_train=pd.read_csv('Notebook\\data\\train.csv').shape[0]
+            X_train=concat_df[:len_train]
+            y_train=target_var[:len_train]
+            X_test=concat_df[len_train:]
+            y_test=target_var[len_train:]
+            logging.info("Splitting of dataset into train set and test set completed")
+            #y_train.to_csv(self.data_transformation_config.ft_train_target_path,index=False,header=True)
+            #y_test.to_csv(self.data_transformation_config.ft_test_target_path,index=False,header=True)
 
-            df_transformed=preprocessor_obj.fit_transform(concat_df)
-            df_transformed=df_transformed.toarray()
-            df_transformed=pd.DataFrame(df_transformed)
+            X_train=preprocessor_obj.fit_transform(X_train)
+            X_train=X_train.toarray()
+            X_train=pd.DataFrame(X_train)
+
+            X_test=preprocessor_obj.transform(X_test)
+            X_test=X_test.toarray()
+            X_test=pd.DataFrame(X_test)
 
             ##df_transformed.to_csv(self.data_transformation_config.feature_transform_obj_file_path,index=False,header=True)
             ##target_var.to_csv(self.data_transformation_config.target_variable_obj_file_path,index=False,header=True )
             logging.info("Feature transformation completed")
   
-            logging.info("Entered the data split method")
-            len_train=pd.read_csv('Notebook\\data\\train.csv').shape[0]
-            X_train=df_transformed[:len_train]
-            y_train=target_var[:len_train]
-            X_test=df_transformed[len_train:]
-            y_test=target_var[len_train:]
-            logging.info("Splitting of dataset into train set and test set completed")
-            y_train.to_csv(self.data_transformation_config.ft_train_target_path,index=False,header=True)
-            y_test.to_csv(self.data_transformation_config.ft_test_target_path,index=False,header=True)
+            
 
 
             save_object(
@@ -214,13 +236,13 @@ class DataTransformation:
                 obj=preprocessor_obj
             )
       
-            sc=StandardScaler()
-            X_train=pd.DataFrame(sc.fit_transform(X_train))
-            X_test=pd.DataFrame(sc.transform(X_test))
-            logging.info("Feature scaling completed")
+            #sc=StandardScaler()
+            #X_train=pd.DataFrame(sc.fit_transform(X_train))
+            #X_test=pd.DataFrame(sc.transform(X_test))
+            #logging.info("Feature scaling completed")
 
-            X_train.to_csv(self.data_transformation_config.ft_train_data_path,index=False,header=True)
-            X_test.to_csv(self.data_transformation_config.ft_test_data_path,index=False,header=True)
+            #X_train.to_csv(self.data_transformation_config.ft_train_data_path,index=False,header=True)
+            #X_test.to_csv(self.data_transformation_config.ft_test_data_path,index=False,header=True)
             
             
 
