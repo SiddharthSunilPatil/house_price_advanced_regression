@@ -35,6 +35,8 @@ class DataIngestion:
             logging.info("Ingestion of the data is completed")
 
             return self.ingestion_config.concat_data_path
+                
+    
 
         except Exception as e:
             raise CustomException(e,sys)
@@ -48,9 +50,10 @@ if __name__=="__main__":
     data_transformation=DataTransformation()
     _,X_train,y_train,X_test,y_test=data_transformation.initiate_data_transformation(concat_path)
 
+    
     model_trainer=ModelTrainer()
     _,model_name,model=model_trainer.initiate_model_trainer(X_train,y_train)
-    model_trainer.hyperparameter_tuning(model,model_name,X_train,y_train)
+    model_trainer.hyperparameter_tuning(model,model_name,X_train,y_train,X_test)
 
 
     

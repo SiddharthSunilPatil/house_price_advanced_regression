@@ -1,0 +1,1463 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Advanced Regression for House Price Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Housing Price Predictor</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">MSSubClass</label>
+            <select class="form-control" name="MSSubClass" placeholder="Enter MSSubClass" required>
+                <option class="placeholder" selected disabled value="">Select type of dwelling involved in the sale</option>
+                <option value="20">
+                    1-STORY 1946 & NEWER ALL STYLES
+                </option>
+                <option value="30">
+                    1-STORY 1945 & OLDER
+                </option>
+                <option value="40">
+                    1-STORY W/FINISHED ATTIC ALL AGES
+                </option>
+                <option value="45">
+                    1-1/2 STORY - UNFINISHED ALL AGES
+                </option>
+                <option value="50">
+                    1-1/2 STORY FINISHED ALL AGES
+                </option>
+                <option value="60">
+                    2-STORY 1946 & NEWER
+                </option>
+                <option value="70">
+                    2-STORY 1945 & OLDER
+                </option>
+                <option value="75">
+                    2-1/2 STORY ALL AGES
+                </option>
+                <option value="80">
+                    SPLIT OR MULTI-LEVEL
+                </option>
+                <option value="85">
+                    SPLIT FOYER
+                </option>
+                <option value="90">
+                    DUPLEX - ALL STYLES AND AGES
+                </option>
+                <option value="120">
+                    1-STORY PUD (Planned Unit Development) - 1946 & NEWER
+                </option>
+                <option value="150">
+                    1-1/2 STORY PUD - ALL AGES
+                </option>
+                <option value="160">
+                    2-STORY PUD - 1946 & NEWER
+                </option>
+                <option value="180">
+                    PUD - MULTILEVEL - INCL SPLIT LEV/FOYER
+                </option>
+                <option value="190">
+                    2 FAMILY CONVERSION - ALL STYLES AND AGES
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MSZoning</label>
+            <select class="form-control" name="MSZoning" placeholder="Enter MSZoning" required>
+                <option class="placeholder" selected disabled value="">Select general zoning classification</option>
+                <option value="A">
+                    Agriculture
+                </option>
+                <option value="C">
+                    Commercial
+                </option>
+                <option value="FV">
+                    Floating Village Residential
+                </option>
+                <option value="I">
+                    Industrial
+                </option>
+                <option value="RH">
+                    Residential High Density
+                </option>
+                <option value="RL">
+                    Residential Low Density
+                </option>
+                <option value="RP">
+                    Residential Low Density Park
+                </option>
+                <option value="RM">
+                    Residential Medium Density
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LotFrontage [Enter linear feet of street connected to property]</label>
+            <input class="form-control" type="number" name="LotFrontage"
+                placeholder="" min='0' max='400' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LotArea [Enter Lot size in square feet]</label>
+            <input class="form-control" type="number" name="LotArea"
+                placeholder="" min='1000' max='250000'/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Street</label>
+            <select class="form-control" name="Street"
+                placeholder="Enter Street" required>
+                <option class="placeholder" selected disabled value="">Select Type of road access to property</option>
+                <option value="Grvl">
+                    Gravel
+                </option>
+                <option value="Pave">
+                    Paved
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Alley</label>
+            <select class="form-control" name="Alley" placeholder="Enter Alley" required>
+                <option class="placeholder" selected disabled value="">Select Type of alley access to property</option>
+                <option value="Grvl">
+                    Gravel
+                </option>
+                <option value="Pave">
+                    Paved
+                </option>
+                <option value="NA">
+                    No Alley access
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LotShape</label>
+            <select class="form-control" name="LotShape" placeholder="Enter LotShape"
+                required>
+                <option class="placeholder" selected disabled value="">Select General shape of property</option>
+                <option value="Reg">
+                    Regular
+                </option>
+                <option value="IR1">
+                    Slightly irregular
+                </option>
+                <option value="IR2">
+                    Moderately Irregular
+                </option>
+                <option value="IR3">
+                    Irregular
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LandContour</label>
+            <select class="form-control" name="LandContour" placeholder="Enter LandContour"
+                required>
+                <option class="placeholder" selected disabled value="">Select Flatness of the property</option>
+                <option value="Lvl">
+                    Near Flat/Level
+                </option>
+                <option value="Bnk">
+                    Banked - Quick and significant rise from street grade to building
+                </option>
+                <option value="HLS">
+                    Hillside - Significant slope from side to side
+                </option>
+                <option value="Low">
+                    Depression
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Utilities</label>
+            <select class="form-control" name="Utilities" placeholder="Enter Utilities"
+                required>
+                <option class="placeholder" selected disabled value="">Select Type of utilities available</option>
+                <option value="AllPub">
+                    All public Utilities (E,G,W,& S)
+                </option>
+                <option value="NoSewr">
+                    Electricity, Gas, and Water (Septic Tank)
+                </option>
+                <option value="NoSeWa">
+                    Electricity and Gas Only
+                </option>
+                <option value="ELO">
+                    Electricity only
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LotConfig</label>
+            <select class="form-control" name="LotConfig" placeholder="Enter LotConfig"
+                required>
+                <option class="placeholder" selected disabled value="">Select Lot configuration</option>
+                <option value="Inside">
+                    Inside lot
+                </option>
+                <option value="Corner">
+                    Corner lot
+                </option>
+                <option value="CulDSac">
+                    Cul-de-sac
+                </option>
+                <option value="FR2">
+                    Frontage on 2 sides of property
+                </option>
+                <option value="FR3">
+                    Frontage on 3 sides of property
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LandSlope</label>
+            <select class="form-control" name="LandSlope" placeholder="Enter LandSlope"
+                required>
+                <option class="placeholder" selected disabled value="">Select Slope of property</option>
+                <option value="Gtl">
+                    Gentle slope
+                </option>
+                <option value="Mod">
+                    Moderate Slope
+                </option>
+                <option value="Sev">
+                    Severe Slope
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Neighborhood</label>
+            <select class="form-control" name="Neighborhood" placeholder="Enter Neighborhood"
+                required>
+                <option class="placeholder" selected disabled value="">Select Physical locations within Ames city limits</option>
+                <option value="Blmngtn">
+                    Bloomington Heights   
+                </option>
+                <option value="Blueste">
+                    Bluestem                    
+                </option>
+                <option value="BrDale"> 
+                    Briardale                   
+                </option>
+                <option value="BrkSide">
+                    Brookside                    
+                </option>
+                <option value="ClearCr">
+                    Clear Creek                    
+                </option>
+                <option value="CollgCr">
+                    College Creek
+                </option>
+                <option value="Crawfor">
+                    Crawford                    
+                </option>
+                <option value="Edwards">
+                    Edwards                    
+                </option>
+                <option value="Gilbert">
+                    Gilbert                    
+                </option>
+                <option value="IDOTRR">
+                    Iowa DOT and Rail Road                    
+                </option>
+                <option value="MeadowV">
+                    Meadow Village                    
+                </option>
+                <option value="Mitchel">
+                    Mitchell                    
+                </option>
+                <option value="Names">
+                    North Ames                    
+                </option>
+                <option value="NoRidge">
+                    Northridge                    
+                </option>
+                <option value="NPkVill">
+                    Northpark Villa                    
+                </option>
+                <option value="NridgHt">
+                    Northridge Heights                    
+                </option>
+                <option value="NWAmes">
+                    Northwest Ames                    
+                </option>
+                <option value="OldTown">
+                    Old Town                    
+                </option>
+                <option value="SWISU">
+                    South & West of Iowa State University                    
+                </option>
+                <option value="Sawyer">
+                    Sawyer                    
+                </option>
+                <option value="SawyerW">
+                    Sawyer West                    
+                </option>
+                <option value="Somerst">
+                    Somerset                    
+                </option>
+                <option value="StoneBr">
+                    Stone Brook                    
+                </option>
+                <option value="Timber"> 
+                    Timberland                   
+                </option>
+                <option value="Veenker"> 
+                    Veenker                   
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Condition1</label>
+            <select class="form-control" name="Condition1" placeholder="Enter Condition1"
+                required>
+                <option class="placeholder" selected disabled value="">Select Proximity to various conditions</option>
+                <option value="Artery">
+                    Adjacent to arterial street
+                </option>
+                <option value="Feedr">
+                    Adjacent to feeder street
+                </option>
+                <option value="Norm">
+                    Normal
+                </option>
+                <option value="RRNn">
+                    Within 200' of North-South Railroad
+                </option>
+                <option value="RRAn">
+                    Adjacent to North-South Railroad
+                </option>
+                <option value="PosN">
+                    Near positive off-site feature--park, greenbelt, etc.
+                </option>
+                <option value="PosA">
+                    Adjacent to postive off-site feature
+                </option>
+                <option value="RRNe">
+                    Within 200' of East-West Railroad
+                </option>
+                <option value="RRAe">
+                    Adjacent to East-West Railroad
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Condition2</label>
+            <select class="form-control" name="Condition2" placeholder="Enter Condition2"
+                required>
+                <option class="placeholder" selected disabled value="">Select Proximity to various conditions (if more than one is present)</option>
+                <option value="Artery">
+                    Adjacent to arterial street
+                </option>
+                <option value="Feedr">
+                    Adjacent to feeder street
+                </option>
+                <option value="Norm">
+                    Normal
+                </option>
+                <option value="RRNn">
+                    Within 200' of North-South Railroad
+                </option>
+                <option value="RRAn">
+                    Adjacent to North-South Railroad
+                </option>
+                <option value="PosN">
+                    Near positive off-site feature--park, greenbelt, etc.
+                </option>
+                <option value="PosA">
+                    Adjacent to postive off-site feature
+                </option>
+                <option value="RRNe">
+                    Within 200' of East-West Railroad
+                </option>
+                <option value="RRAe">
+                    Adjacent to East-West Railroad
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BldgType</label>
+            <select class="form-control" name="BldgType" placeholder="Enter BldgType"
+                required>
+                <option class="placeholder" selected disabled value="">Type of dwelling</option>
+                <option value="1Fam">
+                    Single-family Detached
+                </option>
+                <option value="2FmCon">
+                    Two-family Conversion; originally built as one-family dwelling
+                </option>
+                <option value="Duplx">
+                    Duplex
+                </option>
+                <option value="TwnhsE">
+                    Townhouse End Unit
+                </option>
+                <option value="TwnhsI">
+                    Townhouse Inside Unit
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">HouseStyle</label>
+            <select class="form-control" name="HouseStyle" placeholder="Enter HouseStyle"
+                required>
+                <option class="placeholder" selected disabled value="">Select Style of dwelling</option>
+                <option value="1Story">
+                    One story
+                </option>
+                <option value="1.5Fin">
+                    One and one-half story: 2nd level finished
+                </option>
+                <option value="1.5Unf">
+                    One and one-half story: 2nd level unfinished
+                </option>
+                <option value="2Story">
+                    Two story
+                </option>
+                <option value="2.5Fin">
+                    Two and one-half story: 2nd level finished
+                </option>
+                <option value="2.5Unf">
+                    Two and one-half story: 2nd level unfinished
+                </option>
+                <option value="SFoyer">
+                    Split Foyer
+                </option>
+                <option value="SLvl">
+                    Split Level
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">OverallQual</label>
+            <select class="form-control" name="OverallQual" placeholder="Enter OverallQual"
+                required>
+                <option class="placeholder" selected disabled value="">Select the overall material and finish of the house</option>
+                <option value="10">
+                    Very Excellent
+                </option>
+                <option value="9">
+                    Excellent
+                </option>
+                <option value="8">
+                    Very Good
+                </option>
+                <option value="7">
+                    Good
+                </option>
+                <option value="6">
+                    Above Average
+                </option>
+                <option value="5">
+                    Average
+                </option>
+                <option value="4">
+                    Below Average
+                </option>
+                <option value="3">
+                    Fair
+                </option>
+                <option value="2">
+                    Poor
+                </option>
+                <option value="1">
+                    Very Poor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">OverallCond</label>
+            <select class="form-control" name="OverallCond" placeholder="Enter OverallCond"
+                required>
+                <option class="placeholder" selected disabled value="">Select the overall condition of the house
+                </option>
+                <option value="10">
+                    Very Excellent
+                </option>
+                <option value="9">
+                    Excellent
+                </option>
+                <option value="8">
+                    Very Good
+                </option>
+                <option value="7">
+                    Good
+                </option>
+                <option value="6">
+                    Above Average
+                </option>
+                <option value="5">
+                    Average
+                </option>
+                <option value="4">
+                    Below Average
+                </option>
+                <option value="3">
+                    Fair
+                </option>
+                <option value="2">
+                    Poor
+                </option>
+                <option value="1">
+                    Very Poor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">YearBuilt [Enter Original construction date(YYYY)</label>
+            <input class="form-control" type="number" name="YearBuilt"
+                placeholder="" min='1850' max='2015' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">YearRemodAdd [Enter Remodel date (same as construction date if no remodeling or additions)]</label>
+            <input class="form-control" type="number" name="YearRemodAdd"
+                placeholder="" min='1950' max='2015' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">RoofStyle</label>
+            <select class="form-control" name="RoofStyle" placeholder="Enter RoofStyle"
+                required>
+                <option class="placeholder" selected disabled value="">Select Type of roof</option>
+                <option value="Flat">
+                    Flat
+                </option>
+                <option value="Gable">
+                    Gable
+                </option>
+                <option value="Gambrel">
+                    Gabrel (Barn)
+                </option>
+                <option value="Hip">
+                    Hip
+                </option>
+                <option value="Mansard">
+                    Mansard
+                </option>
+                <option value="Shed">
+                    Shed
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">RoofMatl</label>
+            <select class="form-control" name="RoofMatl" placeholder="Enter RoofMatl"
+                required>
+                <option class="placeholder" selected disabled value="">Select Roof material</option>
+                <option value="ClyTile">
+                    Clay or Tile
+                </option>
+                <option value="CompShg">
+                    Standard (Composite) Shingle
+                </option>
+                <option value="Membran">
+                    Membrane
+                </option>
+                <option value="Metal">
+                    Metal
+                </option>
+                <option value="Roll">
+                    Roll
+                </option>
+                <option value="Tar&Grv">
+                    Gravel & Tar
+                </option>
+                <option value="WdShake">
+                    Wood Shakes
+                </option>
+                <option value="WdShngl">
+                    Wood Shingles
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Exterior1st</label>
+            <select class="form-control" name="Exterior1st" placeholder="Enter Exterior1st"
+                required>
+                <option class="placeholder" selected disabled value="">Select Exterior covering on house</option>
+                <option value="AsbShng">
+                    Asbestos Shingles
+                </option>
+                <option value="AsphShn">
+                    Asphalt Shingles
+                </option>
+                <option value="BrkComm">
+                    Brick Common
+                </option>
+                <option value="BrkFace">
+                    Brick Face
+                </option>
+                <option value="CBlock">
+                    Cinder Block
+                </option>
+                <option value="CemntBd">
+                    Cement Board
+                </option>
+                <option value="HdBoard">
+                    Hard Board
+                </option>
+                <option value="ImStucc">
+                    Imitation Stucco
+                </option>
+                <option value="MetalSd">
+                    Metal Siding
+                </option>
+                <option value="Other">
+                    Other
+                </option>
+                <option value="Plywood">
+                    Plywood
+                </option>
+                <option value="PreCast">
+                    PreCast
+                </option>
+                <option value="Stone">
+                    Stone
+                </option>
+                <option value="Stucco">
+                    Stucco
+                </option>
+                <option value="VinylSd">
+                    Vinyl Siding
+                </option>
+                <option value="Wd Sdng">
+                    Wood Siding
+                </option>
+                <option value="WdShing">
+                    Wood Shingles
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Exterior2nd</label>
+            <select class="form-control" name="Exterior2nd" placeholder="Enter Exterior2nd"
+                required>
+                <option class="placeholder" selected disabled value="">Select Exterior covering on house (if more than one material)</option>
+                <option value="AsbShng">
+                    Asbestos Shingles
+                </option>
+                <option value="AsphShn">
+                    Asphalt Shingles
+                </option>
+                <option value="BrkComm">
+                    Brick Common
+                </option>
+                <option value="BrkFace">
+                    Brick Face
+                </option>
+                <option value="CBlock">
+                    Cinder Block
+                </option>
+                <option value="CemntBd">
+                    Cement Board
+                </option>
+                <option value="HdBoard">
+                    Hard Board
+                </option>
+                <option value="ImStucc">
+                    Imitation Stucco
+                </option>
+                <option value="MetalSd">
+                    Metal Siding
+                </option>
+                <option value="Other">
+                    Other
+                </option>
+                <option value="Plywood">
+                    Plywood
+                </option>
+                <option value="PreCast">
+                    PreCast
+                </option>
+                <option value="Stone">
+                    Stone
+                </option>
+                <option value="Stucco">
+                    Stucco
+                </option>
+                <option value="VinylSd">
+                    Vinyl Siding
+                </option>
+                <option value="Wd Sdng">
+                    Wood Siding
+                </option>
+                <option value="WdShing">
+                    Wood Shingles
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MasVnrType</label>
+            <select class="form-control" name="MasVnrType" placeholder="Enter MasVnrType"
+                required>
+                <option class="placeholder" selected disabled value="">Select Masonry veneer type</option>
+                <option value="BrkCmn">
+                    Brick Common
+                </option>
+                <option value="BrkFace">
+                    Brick Face
+                </option>
+                <option value="CBlock">
+                    Cinder Block
+                </option>
+                <option value="None">
+                    None
+                </option>
+                <option value=" Stone">
+                    Stone
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MasVnrArea [Enter Masonry veneer area in square feet]</label>
+            <input class="form-control" type="number" name="MasVnrArea"
+                placeholder="" min='0' max='2000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ExterQual</label>
+            <select class="form-control" name="ExterQual" placeholder="Enter ExterQual"
+                required>
+                <option class="placeholder" selected disabled value="">Select the quality of the material on the exterior</option>
+                <option value="Ex">
+                    Excellent
+                </option>
+                <option value="Gd">
+                    Good
+                </option>
+                <option value="TA">
+                    Average/Typical
+                </option>
+                <option value="Fa">
+                    Fair
+                </option>
+                <option value="Po">\
+                    Poor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ExterCond</label>
+            <select class="form-control" name="ExterCond" placeholder="Enter ExterCond"
+                required>
+                <option class="placeholder" selected disabled value="">Select the present condition of the material on the exterior</option>
+                <option value="Ex">
+                    Excellent
+                </option>
+                <option value="Gd">
+                    Good
+                </option>
+                <option value="TA">
+                    Average/Typical
+                </option>
+                <option value="Fa">
+                    Fair
+                </option>
+                <option value="Po">\
+                    Poor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Foundation</label>
+            <select class="form-control" name="Foundation" placeholder="Enter Foundation"
+                required>
+                <option class="placeholder" selected disabled value="">Select Type of foundation</option>
+                <option value="BrkTil">
+                    Brick & Tile
+                </option>
+                <option value="CBlock">
+                    CBlock
+                </option>
+                <option value="PConc">
+                    Poured Contrete
+                </option>
+                <option value="Slab">
+                    Slab
+                </option>
+                <option value="Stone">
+                    Stone
+                </option>
+                <option value="Wood">
+                    Wood
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtQual</label>
+            <select class="form-control" name="BsmtQual" placeholder="Enter BsmtQual"
+                required>
+                <option class="placeholder" selected disabled value="">Select the height of the basement</option>
+                <option value="Ex">
+                    Excellent (100+ inches)
+                </option>
+                <option value="Gd">
+                    Good (90-99 inches)
+                </option>
+                <option value="TA">
+                    Typical (80-89 inches)
+                </option>
+                <option value="Fa">
+                    Fair (70-79 inches)
+                </option>
+                <option value="Po">
+                    Poor (less than 70 inches)
+                </option>
+                <option value="NA">
+                    No Basement
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtCond</label>
+            <select class="form-control" name="BsmtCond" placeholder="Enter BsmtCond"
+                required>
+                <option class="placeholder" selected disabled value="">Select the general condition of the basement</option>
+                <option value="Ex">
+                    Excellent
+                </option>
+                <option value="Gd">
+                    Good
+                </option>
+                <option value="TA">
+                    Typical - slight dampness allowed
+                </option>
+                <option value="Fa">
+                    Fair - dampness or some cracking or settling
+                </option>
+                <option value="Po">
+                    Poor - Severe cracking, settling, or wetness
+                </option>
+                <option value="NA">
+                    No Basement
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtExposure</label>
+            <select class="form-control" name="BsmtExposure" placeholder="Enter BsmtExposure"
+                required>
+                <option class="placeholder" selected disabled value="">Select walkout or garden level walls</option>
+                <option value="Gd">
+                    Good Exposure
+                </option>
+                <option value="Av">
+                    Average Exposure (split levels or foyers typically score average or above)
+                </option>
+                <option value="Mn">
+                    Mimimum Exposure
+                </option>
+                <option value="No">
+                    No Exposure
+                </option>
+                <option value="NA">
+                    No Basement
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtFinType1</label>
+            <select class="form-control" name="BsmtFinType1" placeholder="Enter BsmtFinType1"
+                required>
+                <option class="placeholder" selected disabled value="">Select Rating of basement finished area</option>
+                <option value="GLQ">
+                    Good Living Quarters
+                </option>
+                <option value="ALQ">
+                    Average Living Quarters
+                </option>
+                <option value="BLQ">
+                    Below Average Living Quarters
+                </option>
+                <option value="Rec">
+                    Average Rec Room
+                </option>
+                <option value="LwQ">
+                    Low Quality
+                </option>
+                <option value="Unf">
+                    Unfinshed
+                </option>
+                <option value="NA">
+                    No Basement
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtFinSF1 [Enter Type 1 finished square feet]</label>
+            <input class="form-control" type="number" name="BsmtFinSF1"
+                placeholder="" min='0' max='6000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtFinType2</label>
+            <select class="form-control" name="BsmtFinType2" placeholder="Enter BsmtFinType2"
+                required>
+                <option class="placeholder" selected disabled value="">Select Rating of basement finished area (if multiple types)</option>
+                <option value="GLQ">
+                    Good Living Quarters
+                </option>
+                <option value="ALQ">
+                    Average Living Quarters
+                </option>
+                <option value="BLQ">
+                    Below Average Living Quarters
+                </option>
+                <option value="Rec">
+                    Average Rec Room
+                </option>
+                <option value="LwQ">
+                    Low Quality
+                </option>
+                <option value="Unf">
+                    Unfinshed
+                </option>
+                <option value="NA">
+                    No Basement
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtFinSF2 [Enter Type 1 finished square feet]</label>
+            <input class="form-control" type="number" name="BsmtFinSF2"
+                placeholder="" min='0' max='2000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtUnfSF [Enter Unfinished square feet of basement area]</label>
+            <input class="form-control" type="number" name="BsmtUnfSF"
+                placeholder="" min='0' max='2500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TotalBsmtSF [Enter Total square feet of basement area]</label>
+            <input class="form-control" type="number" name="TotalBsmtSF"
+                placeholder="" min='0' max='6500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Heating</label>
+            <select class="form-control" name="Heating" placeholder="Enter Heating"
+                required>
+                <option class="placeholder" selected disabled value="">Select Type of heating</option>
+                <option value="Floor">
+                    Floor Furnace
+                </option>
+                <option value="GasA">
+                    Gas forced warm air furnace
+                </option>
+                <option value="GasW">
+                    Gas hot water or steam heat
+                </option>
+                <option value="Grav">
+                    Gravity furnace
+                </option>
+                <option value="OthW">
+                    Hot water or steam heat other than gas
+                </option>
+                <option value="Wall">
+                    Wall furnace
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">HeatingQC</label>
+            <select class="form-control" name="HeatingQC" placeholder="Enter HeatingQC"
+                required>
+                <option class="placeholder" selected disabled value="">Select Heating quality and condition</option>
+                <option value="Ex">
+                    Excellent 
+                </option>
+                <option value="Gd">
+                    Good 
+                </option>
+                <option value="TA">
+                    Average/Typical 
+                </option>
+                <option value="Fa">
+                    Fair 
+                </option>
+                <option value="Po">
+                    Poor 
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CentralAir</label>
+            <select class="form-control" name="CentralAir" placeholder="Enter CentralAir"
+                required>
+                <option class="placeholder" selected disabled value="">Select Central air conditioning</option>
+                <option value="N">
+                    No
+                </option>
+                <option value="Y">
+                    Yes
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Electrical</label>
+            <select class="form-control" name="Electrical" placeholder="Enter Electrical"
+                required>
+                <option class="placeholder" selected disabled value="">Select Electrical system</option>
+                <option value="SBrkr">
+                    Standard Circuit Breakers & Romex
+                </option>
+                <option value="FuseA">
+                    Fuse Box over 60 AMP and all Romex wiring (Average)
+                </option>
+                <option value="FuseF">
+                    60 AMP Fuse Box and mostly Romex wiring (Fair)
+                </option>
+                <option value="FuseP">
+                    60 AMP Fuse Box and mostly knob & tube wiring (poor)
+                </option>
+                <option value="Mix">
+                    Mixed
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">1stFlrSF [Enter First Floor square feet]</label>
+            <input class="form-control" type="number" name="1stFlrSF"
+                placeholder="" min='300' max='5500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">2ndFlrSF [Enter Second floor square feet]</label>
+            <input class="form-control" type="number" name="2ndFlrSF"
+                placeholder="" min='0' max='2500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">LowQualFinSF [Enter Low quality finished square feet (all floors)]</label>
+            <input class="form-control" type="number" name="LowQualFinSF"
+                placeholder="" min='0' max='1500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GrLivArea [Enter Above grade (ground) living area square feet]</label>
+            <input class="form-control" type="number" name="GrLivArea"
+                placeholder="" min='300' max='6000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtFullBath [Enter No of Basement full bathrooms]</label>
+            <input class="form-control" type="number" name="BsmtFullBath"
+                placeholder="" min='0' max='3' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BsmtHalfBath [Enter No of Basement half bathrooms]</label>
+            <input class="form-control" type="number" name="BsmtHalfBath"
+                placeholder="" min='0' max='2' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">FullBath [Enter No of Full bathrooms above grade]</label>
+            <input class="form-control" type="number" name="FullBath"
+                placeholder="" min='0' max='4' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">HalfBath [Enter No of Half baths above grade]</label>
+            <input class="form-control" type="number" name="HalfBath"
+                placeholder="" min='0' max='2' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BedroomAbvGr [Enter No of Bedrooms above grade (does NOT include basement bedrooms)]</label>
+            <input class="form-control" type="number" name="BedroomAbvGr"
+                placeholder="" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">KitchenAbvGr [Enter No of Kitchens above grade]</label>
+            <input class="form-control" type="number" name="KitchenAbvGr"
+                placeholder="" min='0' max='3' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">KitchenQual</label>
+            <select class="form-control" name="KitchenQual" placeholder="Enter KitchenQual"
+                required>
+                <option class="placeholder" selected disabled value="">Select Kitchen quality</option>
+                <option value="Ex">
+                    Excellent
+                </option>
+                <option value="Gd">
+                    Good
+                </option>
+                <option value="TA">
+                    Typical/Average
+                </option>
+                <option value="Fa">
+                    Fair
+                </option>
+                <option value="Po">
+                    Poor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">TotRmsAbvGrd [Enter Total No of rooms above grade (does not include bathrooms)]</label>
+            <input class="form-control" type="number" name="TotRmsAbvGrd"
+                placeholder="" min='0' max='15' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Functional</label>
+            <select class="form-control" name="Functional" placeholder="Enter Functional"
+                required>
+                <option class="placeholder" selected disabled value="">Select Home functionality (Assume typical unless deductions are warranted)</option>
+                <option value="Typ">
+                    Typical Functionality
+                </option>
+                <option value="Min1">
+                    Minor Deductions 1
+                </option>
+                <option value="Min2">
+                    Minor Deductions 2
+                </option>
+                <option value="Mod">
+                    Moderate Deductions
+                </option>
+                <option value="Maj1">
+                    Major Deductions 1
+                </option>
+                <option value="Maj2">
+                    Major Deductions 2
+                </option>
+                <option value="Sev">
+                    Severely Damaged
+                </option>
+                <option value="Sal">
+                    Salvage only
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fireplaces [Enter Number of fireplaces]</label>
+            <input class="form-control" type="number" name="Fireplaces"
+                placeholder="" min='0' max='4' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">FireplaceQu</label>
+            <select class="form-control" name="FireplaceQu" placeholder="Enter FireplaceQu"
+                required>
+                <option class="placeholder" selected disabled value="">Select Fireplace quality</option>
+                <option value="Ex">
+                    Excellent - Exceptional Masonry Fireplace
+                </option>
+                <option value="Gd">
+                    Good - Masonry Fireplace in main level
+                </option>
+                <option value="TA">
+                    Average - Prefabricated Fireplace in main living area or Masonry Fireplace in basement
+                </option>
+                <option value="Fa">
+                    Fair - Prefabricated Fireplace in basement
+                </option>
+                <option value="Po">
+                    Poor - Ben Franklin Stove
+                </option>
+                <option value="NA">
+                    No Fireplace
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageType</label>
+            <select class="form-control" name="GarageType" placeholder="Enter GarageType"
+                required>
+                <option class="placeholder" selected disabled value="">Select Garage location</option>
+                <option value="2Types">
+                    More than one type of garage
+                </option>
+                <option value="Attchd">
+                    Attached to home
+                </option>
+                <option value="Basment">
+                    Basement Garage
+                </option>
+                <option value="BuiltIn">
+                    Built-In (Garage part of house - typically has room above garage)
+                </option>
+                <option value="CarPort">
+                    Car Port
+                </option>
+                <option value="Detchd">
+                    Detached from home
+                </option>
+                <option value="NA">
+                    No Garage
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageYrBlt [Enter Year garage was built]</label>
+            <input class="form-control" type="number" name="GarageYrBlt"
+                placeholder="" min='1895' max='2015' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageFinish</label>
+            <select class="form-control" name="GarageFinish" placeholder="Enter GarageFinish"
+                required>
+                <option class="placeholder" selected disabled value="">Select Interior finish of the garage</option>
+                <option value="Fin">
+                    Finished
+                </option>
+                <option value="RFn">
+                    Rough Finished
+                </option>
+                <option value="Unf">
+                    Unfinished
+                </option>
+                <option value="NA">
+                    No Garage
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageCars [Enter Size of garage in car capacity]</label>
+            <input class="form-control" type="number" name="GarageCars"
+                placeholder="" min='0' max='5' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageArea [Enter Size of garage in square feet]</label>
+            <input class="form-control" type="number" name="GarageArea"
+                placeholder="" min='0' max='1500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageQual</label>
+            <select class="form-control" name="GarageQual" placeholder="Enter GarageQual"
+                required>
+                <option class="placeholder" selected disabled value="">Select Garage quality</option>
+                <option value="Ex">
+                    Excellent 
+                </option>
+                <option value="Gd">
+                    Good 
+                </option>
+                <option value="TA">
+                    Average 
+                </option>
+                <option value="Fa">
+                    Fair 
+                </option>
+                <option value="Po">
+                    Poor 
+                </option>
+                <option value="NA">
+                    No Garage
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">GarageCond</label>
+            <select class="form-control" name="GarageCond" placeholder="Enter GarageCond"
+                required>
+                <option class="placeholder" selected disabled value="">Select Garage condition</option>
+                <option value="Ex">
+                    Excellent 
+                </option>
+                <option value="Gd">
+                    Good 
+                </option>
+                <option value="TA">
+                    Average 
+                </option>
+                <option value="Fa">
+                    Fair 
+                </option>
+                <option value="Po">
+                    Poor 
+                </option>
+                <option value="NA">
+                    No Garage
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PavedDrive</label>
+            <select class="form-control" name="PavedDrive" placeholder="Enter PavedDrive"
+                required>
+                <option class="placeholder" selected disabled value="">Select Paved driveway</option>
+                <option value="Y">
+                    Paved 
+                </option>
+                <option value="P">
+                    Partial Pavement
+                </option>
+                <option value="N">
+                    Dirt/Gravel
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">WoodDeckSF [Enter Wood deck area in square feet]</label>
+            <input class="form-control" type="number" name="WoodDeckSF"
+                placeholder="" min='0' max='1500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">OpenPorchSF [Enter Open porch area in square feet]</label>
+            <input class="form-control" type="number" name="OpenPorchSF"
+                placeholder="" min='0' max='800' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">EnclosedPorch [Enter Enclosed porch area in square feet]</label>
+            <input class="form-control" type="number" name="EnclosedPorch"
+                placeholder="" min='0' max='1200' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">3SsnPorch [Enter Three season porch area in square feet]</label>
+            <input class="form-control" type="number" name="3SsnPorch"
+                placeholder="" min='0' max='600' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ScreenPorch [Enter Screen porch area in square feet]</label>
+            <input class="form-control" type="number" name="ScreenPorch"
+                placeholder="" min='0' max='600' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PoolArea [Enter Pool area in square feet]</label>
+            <input class="form-control" type="number" name="PoolArea"
+                placeholder="" min='0' max='800' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PoolQC</label>
+            <select class="form-control" name="PoolQC" placeholder="Enter PoolQC"
+                required>
+                <option class="placeholder" selected disabled value="">Select Pool quality</option>
+                <option value="Ex">
+                    Excellent 
+                </option>
+                <option value="Gd">
+                    Good 
+                </option>
+                <option value="TA">
+                    Average 
+                </option>
+                <option value="Fa">
+                    Fair 
+                </option>
+                <option value="NA">
+                    No Pool
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fence</label>
+            <select class="form-control" name="Fence" placeholder="Enter Fence"
+                required>
+                <option class="placeholder" selected disabled value="">Select Fence quality</option>
+                <option value="GdPrv">
+                    Good Privacy
+                </option>
+                <option value="MnPrv">
+                    Minimum Privacy
+                </option>
+                <option value="GdWo">
+                    Good Wood
+                </option>
+                <option value="MnWw">
+                    Minimum Wood/Wire
+                </option>
+                <option value="NA">
+                    No Fence
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MiscFeature</label>
+            <select class="form-control" name="MiscFeature" placeholder="Enter MiscFeature"
+                required>
+                <option class="placeholder" selected disabled value="">Select Miscellaneous feature not covered in other categories</option>
+                <option value="Elev">
+                    Elevator
+                </option>
+                <option value="Gar2">
+                    2nd Garage (if not described in garage section)
+                </option>
+                <option value="Othr">
+                    Other
+                </option>
+                <option value="Shed">
+                    Shed (over 100 SF)
+                </option>
+                <option value="TenC">
+                    Tennis Court
+                </option>
+                <option value="NA">
+                    None
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MiscVal [Enter $Value of miscellaneous feature]</label>
+            <input class="form-control" type="number" name="MiscVal"
+                placeholder="" min='0' max='20000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">MoSold [Enter Month Sold (MM)]</label>
+            <input class="form-control" type="number" name="MoSold"
+                placeholder="" min='1' max='12' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">YrSold [Enter Year Sold (YYYY)]</label>
+            <input class="form-control" type="number" name="YrSold"
+                placeholder="" min='2005' max='2010' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">SaleType</label>
+            <select class="form-control" name="SaleType" placeholder="Enter SaleType"
+                required>
+                <option class="placeholder" selected disabled value="">Select Type of sale</option>
+                <option value=" WD">
+                    Warranty Deed - Conventional
+                </option>
+                <option value="CWD">
+                    Warranty Deed - Cash
+                </option>
+                <option value="VWD">
+                    Warranty Deed - VA Loan
+                </option>
+                <option value="New">
+                    Home just constructed and sold
+                </option>
+                <option value="COD">
+                    Court Officer Deed/Estate
+                </option>
+                <option value="Con">
+                    Contract 15% Down payment regular terms
+                </option>
+                <option value="ConLw">
+                    Contract Low Down payment and low interest
+                </option>
+                <option value="ConLI">
+                    Contract Low Interest
+                </option>
+                <option value="ConLD">
+                    Contract Low Down
+                </option>
+                <option value="Oth">
+                    Other
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">SaleCondition</label>
+            <select class="form-control" name="SaleCondition" placeholder="Enter SaleCondition"
+                required>
+                <option class="placeholder" selected disabled value="">Select Condition of sale</option>
+                <option value="Normal">
+                    Normal Sale
+                </option>
+                <option value="Abnorml">
+                    Abnormal Sale -  trade, foreclosure, short sale
+                </option>
+                <option value="AdjLand">
+                    Adjoining Land Purchase
+                </option>
+                <option value="Alloca">
+                    Allocation - two linked properties with separate deeds, typically condo with a garage unit
+                </option>
+                <option value="Family">
+                    Sale between family members
+                </option>
+                <option value="Partial">
+                    Home was not completed when last assessed (associated with New Homes)
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Sales Value for your house" required />
+        </div>
+    </form>
+    <h2>
+       The estimated price of the house is $ {{results}}
+    </h2>
+   <body>
+</html>

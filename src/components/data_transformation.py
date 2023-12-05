@@ -90,6 +90,7 @@ class DataTransformation:
 
             pipeline_one=Pipeline(
                 steps=[
+                    ("Imputer",SimpleImputer(strategy="most_frequent")),
                     ("numeric to categorical converter",numeric_cat_converter()),
                     ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
                     ("Standard Scaler",StandardScaler(with_mean=False))
@@ -119,6 +120,7 @@ class DataTransformation:
 
             pipeline_five=Pipeline(
                 steps=[
+                    ("Imputer",SimpleImputer(strategy="most_frequent")),
                     ("Nominal encoding",OneHotEncoder(handle_unknown='ignore')),
                     ("Standard Scaler",StandardScaler(with_mean=False))
                 ]
@@ -141,6 +143,7 @@ class DataTransformation:
 
             pipeline_eight=Pipeline(
                 steps=[
+                    ("Imputer",SimpleImputer(strategy="most_frequent")),
                     ("Ordinal encoding",OrdinalEncoder(categories=pipeline_eight_categories,handle_unknown='use_encoded_value', unknown_value=-1)),
                     ("Standard Scaler",StandardScaler(with_mean=False))  
                 ]

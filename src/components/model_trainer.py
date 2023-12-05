@@ -1,5 +1,7 @@
 import os
 import sys
+import numpy as np
+import pandas as pd
 from dataclasses import dataclass
 from src.logger import logging
 from src.exception import CustomException
@@ -60,10 +62,7 @@ class ModelTrainer:
             print("RMSE for the model is:",best_model_score)
 
     
-            save_object(
-                file_path=self.model_trainer_config.trained_model_file_path,
-                obj=best_model  
-            )
+            
 
             return(
                 best_model_score,
@@ -74,7 +73,7 @@ class ModelTrainer:
         except Exception as e:
             CustomException(e,sys)
 
-    def hyperparameter_tuning(self,model,model_name,X_train,y_train):
+    def hyperparameter_tuning(self,model,model_name,X_train,y_train,X_test):
         try:
             logging.info("Entered the hyperparameter tuning method")
             params={
@@ -120,6 +119,21 @@ class ModelTrainer:
 
             print("RMSE of tuned model:",tuned_model_perf.iloc[0][2])
             print("R2 score of tuned model:",tuned_model_perf.iloc[0][1])
+
+            preds=model.predict(X_test)
+            test_sale_price=list(np.exp(preds))
+
+            test_data=pd.read_csv('Notebook\\data\\test.csv')
+            house_id=list(test_data["Id"])
+            test_set_predictions=pd.DataFrame(list(zip(house_id,test_sale_price)),columns=["Id","SalePrice"])
+            print(test_set_predictions)
+
+            save_object(
+                file_path=self.model_trainer_config.trained_model_file_path,
+                obj=model  
+            )
+
+
 
         except Exception as e:
             raise CustomException(e,sys)
