@@ -15,8 +15,6 @@ from sklearn.ensemble import RandomForestRegressor,GradientBoostingRegressor
 from sklearn.neural_network import MLPRegressor
 from sklearn.linear_model import LinearRegression,SGDRegressor
 from sklearn.model_selection import RandomizedSearchCV,GridSearchCV
-from catboost import CatBoostRegressor
-from xgboost import XGBRegressor
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -41,7 +39,6 @@ class ModelTrainer:
                 "DecisionTreeRegressor":DecisionTreeRegressor(),
                 "GradientBoostingRegressor":GradientBoostingRegressor(),
                 "RandomForestRegressor":RandomForestRegressor(),
-                "XGBRegressor":XGBRegressor(),
                 "MLPRegressor":MLPRegressor(),
             }
 
