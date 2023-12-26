@@ -120,6 +120,7 @@ body {
     width: 100%;
   }
   input[type="number"]{
+    vertical-align: top;
     width: 50%;
     margin-left: 500px;
   }
