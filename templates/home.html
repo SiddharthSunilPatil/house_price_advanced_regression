@@ -1,12 +1,11 @@
 <html>
 <body>
     <div class="login">
-       <h1>Advanced Regression for House Price Prediction</h1>
-   
        <form action="{{ url_for('predict_datapoint')}}" method="post">
         <h1>
             <legend>Housing Price Predictor</legend>
         </h1>
+        <div class="form-box">
         <div class="mb-3">
             <label class="form-label">MSSubClass</label>
             <select class="form-control" name="MSSubClass" placeholder="Enter MSSubClass" required>
@@ -1456,6 +1455,7 @@
             <input class="btn btn-primary" type="submit" value="Predict Sales Value for your house" required />
         </div>
     </form>
+    </div>
     <h2>
        The estimated price of the house is $ {{results}}
     </h2>
