@@ -19,5 +19,8 @@ body {
     font-size: 16px;
     font-weight: lighter;
   }
+  .text-center{
+    text-align: center;
+  }
 
     
