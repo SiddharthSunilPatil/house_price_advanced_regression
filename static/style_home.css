@@ -46,7 +46,7 @@ body {
   .form-box_utilities {
     max-width: 800px;
     position: absolute ;
-    top: 1080px;
+    top: 1040px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -56,7 +56,7 @@ body {
   .form-box_area {
     max-width: 800px;
     position: absolute ;
-    top: 1220px;
+    top: 1170px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -66,7 +66,7 @@ body {
   .form-box_rooms {
     max-width: 800px;
     position: absolute ;
-    top: 1360px;
+    top: 1310px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -76,7 +76,7 @@ body {
   .form-box_garage_features {
     max-width: 800px;
     position: absolute ;
-    top: 1640px;
+    top: 1590px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -86,7 +86,7 @@ body {
   .form-box_additional_features {
     max-width: 800px;
     position: absolute ;
-    top: 1860px;
+    top: 1800px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -96,7 +96,7 @@ body {
   .form-box_sale_features {
     max-width: 800px;
     position: absolute ;
-    top:2140px;
+    top:2060px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -106,7 +106,7 @@ body {
   .form-box_submit {
     max-width: 800px;
     position: absolute ;
-    top: 2280px;
+    top: 2200px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
