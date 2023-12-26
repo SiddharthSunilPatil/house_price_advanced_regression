@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #BFE6FF;
+  }
+
+  .profile
+  {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+        padding: 20px; /* adds 30 pixels of padding around the image */        
+  }
