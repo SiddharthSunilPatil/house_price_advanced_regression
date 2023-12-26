@@ -9,7 +9,7 @@
         <h1>
             <legend>Housing Price Predictor</legend>
         </h1>
-        <div class="form-box">
+        <div class="form-box_layout_features">
         <div class="mb-3">
             <label class="form-label">MSSubClass</label>
             <select class="form-control" name="MSSubClass" placeholder="Enter MSSubClass" required>
@@ -377,6 +377,8 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_built_features">
         <div class="mb-3">
             <label class="form-label">BldgType</label>
             <select class="form-control" name="BldgType" placeholder="Enter BldgType"
@@ -515,6 +517,8 @@
             <input class="form-control" type="number" name="YearRemodAdd"
                 placeholder="" min='1950' max='2015' />
         </div>
+        </div>
+        <div class="form-box_exterior_features">
         <div class="mb-3">
             <label class="form-label">RoofStyle</label>
             <select class="form-control" name="RoofStyle" placeholder="Enter RoofStyle"
@@ -758,6 +762,8 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_basement_features">
         <div class="mb-3">
             <label class="form-label">Foundation</label>
             <select class="form-control" name="Foundation" placeholder="Enter Foundation"
@@ -931,6 +937,8 @@
             <input class="form-control" type="number" name="TotalBsmtSF"
                 placeholder="" min='0' max='6500' />
         </div>
+        </div>
+        <div class="form-box_utilities">
         <div class="mb-3">
             <label class="form-label">Heating</label>
             <select class="form-control" name="Heating" placeholder="Enter Heating"
@@ -1013,6 +1021,8 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_area">
         <div class="mb-3">
             <label class="form-label">1stFlrSF [Enter First Floor square feet]</label>
             <input class="form-control" type="number" name="1stFlrSF"
@@ -1033,6 +1043,8 @@
             <input class="form-control" type="number" name="GrLivArea"
                 placeholder="" min='300' max='6000' />
         </div>
+        </div>
+        <div class="form-box_rooms">
         <div class="mb-3">
             <label class="form-label">BsmtFullBath [Enter No of Basement full bathrooms]</label>
             <input class="form-control" type="number" name="BsmtFullBath"
@@ -1151,6 +1163,8 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_garage_features">
         <div class="mb-3">
             <label class="form-label">GarageType</label>
             <select class="form-control" name="GarageType" placeholder="Enter GarageType"
@@ -1279,6 +1293,8 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_additional_features">
         <div class="mb-3">
             <label class="form-label">WoodDeckSF [Enter Wood deck area in square feet]</label>
             <input class="form-control" type="number" name="WoodDeckSF"
@@ -1383,6 +1399,8 @@
             <input class="form-control" type="number" name="MiscVal"
                 placeholder="" min='0' max='20000' />
         </div>
+        </div>
+        <div class="form-box_sale_features">
         <div class="mb-3">
             <label class="form-label">MoSold [Enter Month Sold (MM)]</label>
             <input class="form-control" type="number" name="MoSold"
@@ -1455,8 +1473,11 @@
                 </option>
             </select>
         </div>
+        </div>
+        <div class="form-box_submit">
         <div class="mb-3">
             <input class="btn btn-primary" type="submit" value="Predict Sales Value for your house" required />
+        </div>
         </div>
     </form>
     </div>
