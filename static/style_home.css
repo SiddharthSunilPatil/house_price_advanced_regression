@@ -115,12 +115,11 @@ body {
   }
   .mb-3 {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: baseline;
     margin-right: 20px;
     width: 100%;
   }
   input[type="number"]{
-    vertical-align: top;
     width: 50%;
     margin-left: 500px;
   }
