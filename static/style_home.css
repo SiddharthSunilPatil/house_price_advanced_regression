@@ -115,11 +115,15 @@ body {
   }
   .mb-3 {
     display: inline-block;
-    vertical-align: baseline;
+    vertical-align: top;
     margin-right: 20px;
     width: 100%;
   }
   input[type="number"]{
+    width: 50%;
+    margin-left: 500px;
+  }
+  select[class="form-control"]{
     width: 50%;
     margin-left: 500px;
   }
