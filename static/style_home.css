@@ -113,6 +113,12 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+  .mb-3 {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    width: 30%;
+  }
   h2{
     position: absolute;
     top: 40px;
