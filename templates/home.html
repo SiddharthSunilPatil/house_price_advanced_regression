@@ -1,5 +1,9 @@
 <html>
-<body>
+    <head>
+        <title>House price predictor</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+    </head>
+    <body>
     <div class="login">
        <form action="{{ url_for('predict_datapoint')}}" method="post">
         <h1>
