@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+  }
+
+  .form-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #FFFFE0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
