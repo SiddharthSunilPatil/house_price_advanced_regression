@@ -122,6 +122,10 @@ body {
   input[type="number"]{
     height: 18px;
   }
+  h1{
+    text-align: center;
+    font-size: 24px;
+  }
   h2{
     position: absolute;
     top: 40px;
@@ -184,7 +188,14 @@ body {
   }
   h12{
     position: absolute;
-    top: 2450px;
+    top: 2370px;
+    font-size: 20px;
+    font-weight: bold;
+
+  }
+  h13{
+    position: absolute;
+    top: 2490px;
     font-size: 20px;
     font-weight: bold;
   }
