@@ -121,11 +121,11 @@ body {
   }
   input[type="number"]{
     width: 50%;
-    margin-left: 200px;
+    margin-left: auto;
   }
   select[class="form-control"]{
     width: 50%;
-    margin-left: 20px;
+    margin-left: auto;
   }
   h2{
     position: absolute;
