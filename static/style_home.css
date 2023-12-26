@@ -76,7 +76,7 @@ body {
   .form-box_garage_features {
     max-width: 800px;
     position: absolute ;
-    top: 1620px;
+    top: 1720px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -116,44 +116,55 @@ body {
   h2{
     position: absolute;
     top: 60px;
+    font-size: 16px;
   }
   h3{
     position: absolute;
     top: 400px;
+    font-size: 16px;
   }
   h4{
     position: absolute;
     top: 590px;
+    font-size: 16px;
   }
   h5{
     position: absolute;
     top: 820px;
+    font-size: 16px;
   }
   h6{
     position: absolute;
     top: 1090px;
+    font-size: 16px;
   }
   h7{
     position: absolute;
     top: 1240px;
+    font-size: 16px;
   }
   h8{
     position: absolute;
     top: 1400px;
+    font-size: 16px;
   }
   h9{
     position: absolute;
-    top: 1600px;
+    top: 1700px;
+    font-size: 16px;
   }
   h10{
     position: absolute;
     top: 1930px;
+    font-size: 16px;
   }
   h11{
     position: absolute;
     top: 2210px;
+    font-size: 16px;
   }
   h12{
     position: absolute;
     top: 2370px;
+    font-size: 20px;
   }
