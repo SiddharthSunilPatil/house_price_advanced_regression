@@ -6,7 +6,7 @@ body {
   .form-box_layout_features {
     max-width: 800px;
     position: absolute ;
-    top: 40px;
+    top: 60px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -16,7 +16,7 @@ body {
   .form-box_built_features {
     max-width: 800px;
     position: absolute ;
-    top: 280px;
+    top: 380px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -112,4 +112,8 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+  }
+  h2{
+    position: absolute;
+    top: 2400px;
   }
