@@ -107,7 +107,7 @@ def predict_datapoint():
 
         predict_pipeline=PredictPipeline()
         results=predict_pipeline.predict(pred_df)
-        return render_template('home.html',results=round(results[0],0))
+        return render_template('home.html',results=int(results[0]))
         
     
 
