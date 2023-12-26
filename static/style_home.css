@@ -120,7 +120,7 @@ body {
     width: 100%;
   }
   input[type="number"]{
-    left: 200px;
+    margin-left: 200px;
   }
   h2{
     position: absolute;
