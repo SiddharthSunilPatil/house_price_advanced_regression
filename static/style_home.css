@@ -119,6 +119,9 @@ body {
     margin-right: 20px;
     width: 100%;
   }
+  input[type="number"]{
+    left: 200px;
+  }
   h2{
     position: absolute;
     top: 40px;
