@@ -92,15 +92,15 @@
 
 ## Project Approach
 
-### 1. Data Ingestion: In this phase, both test and train dataset are read from csv file. Since both train set and test set contain missing values, data is first concatenated and prepared for analysis
+**1. Data Ingestion:** In this phase, both test and train dataset are read from csv file. Since both train set and test set contain missing values, data is first concatenated and prepared for analysis.
 
-### 2. Data Transformation: The concatenated data is then passed through a column transformer pipeline. Based on the variable the transformer performs various preprocessing treatments such as simple imputing, nominal encoding, ordinal encoding and stadard scaling. The transformed data is then passed to the model trainer
+**2. Data Transformation:** The concatenated data is then passed through a column transformer pipeline. Based on the variable the transformer performs various preprocessing treatments such as simple imputing, nominal encoding, ordinal encoding and stadard scaling. The transformed data is then passed to the model trainer.
 
-### 3. Model Trainer: Various models are tested to find out the best perfroming model based on Rott Mean Squred Error[RMSE] score. The best model found was Gradient Boosting Regressor. The model is then improved by hyperparameter tuning.
+**3. Model Trainer:** Various models are tested to find out the best perfroming model based on Rott Mean Squred Error[RMSE] score. The best model found was Gradient Boosting Regressor. The model is then improved by hyperparameter tuning.
 
-### 4. Prediciton Pipeline: This pipleline converts input data into a dataframe and loads pickle files for data transformation and model training and predicts final results.
+**4. Prediciton Pipeline:** This pipleline converts input data into a dataframe and loads pickle files for data transformation and model training and predicts final results.
 
-### 5. Deployment: The project is deployed on amazon elastic beanstalk as a flask application to predict house prices
+**5. Deployment:** The project is deployed on amazon elastic beanstalk as a flask application to predict house prices.
 
 
 
