@@ -1,7 +1,9 @@
 ## This Project aims to predict house prices based on 80+ features using advanced regression techniques 
 
-### The features or independent variables are:
+### The dependent or target variables is:
 1. **SalePrice** - The property's sale price in dollars. This is the target variable that you're trying to predict.
+
+### The independent variables or features are as below
 2. **MSSubClass:** The building class
 3. **MSZoning:** The general zoning classification
 4. **LotFrontage:** Linear feet of street connected to property
@@ -81,3 +83,26 @@
 78. **YrSold:** Year Sold
 79. **SaleType:** Type of sale
 80. **SaleCondition:** Condition of sale
+
+## Datasource link: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
+
+## AWS deployment link: http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com
+
+## Exploratory data analysis [EDA] link: https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb
+
+## Project Approach
+
+### 1. Data Ingestion: In this phase, both test and train dataset are read from csv file. Since both train set and test set contain missing values, data is first concatenated and prepared for analysis
+
+### 2. Data Transformation: The concatenated data is then passed through a column transformer pipeline. Based on the variable the transformer performs various preprocessing treatments such as simple imputing, nominal encoding, ordinal encoding and stadard scaling. The transformed data is then passed to the model trainer
+
+### 3. Model Trainer: Various models are tested to find out the best perfroming model based on Rott Mean Squred Error[RMSE] score. The best model found was Gradient Boosting Regressor. The model is then improved by hyperparameter tuning.
+
+### 4. Prediciton Pipeline: This pipleline converts input data into a dataframe and loads pickle files for data transformation and model training and predicts final results.
+
+### 5. Deployment: The project is deployed on amazon elastic beanstalk as a flask application to predict house prices
+
+
+
+
+
