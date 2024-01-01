@@ -16,7 +16,7 @@ body {
   .form-box_built_features {
     max-width: 800px;
     position: absolute ;
-    top: 440px;
+    top: 460px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -26,7 +26,7 @@ body {
   .form-box_exterior_features {
     max-width: 800px;
     position: absolute ;
-    top: 630px;
+    top: 670px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -36,7 +36,7 @@ body {
   .form-box_basement_features {
     max-width: 800px;
     position: absolute ;
-    top: 860px;
+    top: 920px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -46,7 +46,7 @@ body {
   .form-box_utilities {
     max-width: 800px;
     position: absolute ;
-    top: 1130px;
+    top: 1210px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -56,7 +56,7 @@ body {
   .form-box_area {
     max-width: 800px;
     position: absolute ;
-    top: 1280px;
+    top: 1380px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -66,7 +66,7 @@ body {
   .form-box_rooms {
     max-width: 800px;
     position: absolute ;
-    top: 1440px;
+    top: 1560px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -76,7 +76,7 @@ body {
   .form-box_garage_features {
     max-width: 800px;
     position: absolute ;
-    top: 1740px;
+    top: 1880px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -86,7 +86,7 @@ body {
   .form-box_additional_features {
     max-width: 800px;
     position: absolute ;
-    top: 1970px;
+    top: 2130px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -96,7 +96,7 @@ body {
   .form-box_sale_features {
     max-width: 800px;
     position: absolute ;
-    top:2250px;
+    top:2430px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -106,7 +106,7 @@ body {
   .form-box_submit {
     max-width: 800px;
     position: absolute ;
-    top: 2410px;
+    top: 2610px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -134,68 +134,68 @@ body {
   }
   h3{
     position: absolute;
-    top: 400px;
+    top: 420px;
     font-size: 16px;
     font-weight: bold;
   }
   h4{
     position: absolute;
-    top: 590px;
+    top: 630px;
     font-size: 16px;
     font-weight: bold;
   }
   h5{
     position: absolute;
-    top: 810px;
+    top: 870px;
     font-size: 16px;
     font-weight: bold;
   }
   h6{
     position: absolute;
-    top: 1070px;
+    top: 1150px;
     font-size: 16px;
     font-weight: bold;
   }
   h7{
     position: absolute;
-    top: 1260px;
+    top: 1360px;
     font-size: 16px;
     font-weight: bold;
   }
   h8{
     position: absolute;
-    top: 1420px;
+    top: 1540px;
     font-size: 16px;
     font-weight: bold;
   }
   h9{
     position: absolute;
-    top: 1720px;
+    top: 1860px;
     font-size: 16px;
     font-weight: bold;
   }
   h10{
     position: absolute;
-    top: 1950px;
+    top: 2110px;
     font-size: 16px;
     font-weight: bold;
   }
   h11{
     position: absolute;
-    top: 2230px;
+    top: 2410px;
     font-size: 16px;
     font-weight: bold;
   }
   h12{
     position: absolute;
-    top: 2390px;
+    top: 2590px;
     font-size: 20px;
     font-weight: bold;
 
   }
   h13{
     position: absolute;
-    top: 2510px;
+    top: 2730px;
     font-size: 20px;
     font-weight: bold;
   }
