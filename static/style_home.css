@@ -6,7 +6,7 @@ body {
   .form-box_layout_features {
     max-width: 800px;
     position: absolute ;
-    top: 80px;
+    top: 100px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -16,7 +16,7 @@ body {
   .form-box_built_features {
     max-width: 800px;
     position: absolute ;
-    top: 420px;
+    top: 440px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -26,7 +26,7 @@ body {
   .form-box_exterior_features {
     max-width: 800px;
     position: absolute ;
-    top: 610px;
+    top: 630px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -36,7 +36,7 @@ body {
   .form-box_basement_features {
     max-width: 800px;
     position: absolute ;
-    top: 840px;
+    top: 860px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -46,7 +46,7 @@ body {
   .form-box_utilities {
     max-width: 800px;
     position: absolute ;
-    top: 1110px;
+    top: 1130px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -56,7 +56,7 @@ body {
   .form-box_area {
     max-width: 800px;
     position: absolute ;
-    top: 1260px;
+    top: 1280px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -66,7 +66,7 @@ body {
   .form-box_rooms {
     max-width: 800px;
     position: absolute ;
-    top: 1420px;
+    top: 1440px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -76,7 +76,7 @@ body {
   .form-box_garage_features {
     max-width: 800px;
     position: absolute ;
-    top: 1720px;
+    top: 1740px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -86,7 +86,7 @@ body {
   .form-box_additional_features {
     max-width: 800px;
     position: absolute ;
-    top: 1950px;
+    top: 1970px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -96,7 +96,7 @@ body {
   .form-box_sale_features {
     max-width: 800px;
     position: absolute ;
-    top:2230px;
+    top:2250px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -106,7 +106,7 @@ body {
   .form-box_submit {
     max-width: 800px;
     position: absolute ;
-    top: 2390px;
+    top: 2410px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
@@ -128,74 +128,74 @@ body {
   }
   h2{
     position: absolute;
-    top: 40px;
+    top: 60px;
     font-size: 16px;
     font-weight: bold;
   }
   h3{
     position: absolute;
-    top: 380px;
+    top: 400px;
     font-size: 16px;
     font-weight: bold;
   }
   h4{
     position: absolute;
-    top: 570px;
+    top: 590px;
     font-size: 16px;
     font-weight: bold;
   }
   h5{
     position: absolute;
-    top: 790px;
+    top: 810px;
     font-size: 16px;
     font-weight: bold;
   }
   h6{
     position: absolute;
-    top: 1050px;
+    top: 1070px;
     font-size: 16px;
     font-weight: bold;
   }
   h7{
     position: absolute;
-    top: 1240px;
+    top: 1260px;
     font-size: 16px;
     font-weight: bold;
   }
   h8{
     position: absolute;
-    top: 1400px;
+    top: 1420px;
     font-size: 16px;
     font-weight: bold;
   }
   h9{
     position: absolute;
-    top: 1700px;
+    top: 1720px;
     font-size: 16px;
     font-weight: bold;
   }
   h10{
     position: absolute;
-    top: 1930px;
+    top: 1950px;
     font-size: 16px;
     font-weight: bold;
   }
   h11{
     position: absolute;
-    top: 2210px;
+    top: 2230px;
     font-size: 16px;
     font-weight: bold;
   }
   h12{
     position: absolute;
-    top: 2370px;
+    top: 2390px;
     font-size: 20px;
     font-weight: bold;
 
   }
   h13{
     position: absolute;
-    top: 2490px;
+    top: 2510px;
     font-size: 20px;
     font-weight: bold;
   }
