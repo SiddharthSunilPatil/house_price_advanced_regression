@@ -15,8 +15,8 @@ body {
   }
   .form-box_built_features {
     max-width: 800px;
-    position: absolute ;
-    top: 420px;
+    position: relative ;
+    top: 100px;
     left: 20px;
     background-color: #FFFFE0;
     padding: 20px;
