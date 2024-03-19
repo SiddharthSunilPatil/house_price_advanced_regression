@@ -106,6 +106,7 @@
 ## Installation
 
 **1. Setting up the environment**
+
 1.1. Create a directory on your drive.
 1.2. Navigate to the directory with "cd <directory path>" in annaconda prompt
 1.3. Launch VS code with "code ."
