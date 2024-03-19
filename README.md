@@ -103,6 +103,13 @@
 
 **5. Deployment:** The project is deployed on amazon elastic beanstalk as a flask application to predict house prices.
 
+## Installation
+
+**1. Cloning the repository
+1.1. Create a directory on your drive.
+1.2. 
+
+
 
 
 
