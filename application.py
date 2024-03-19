@@ -2,6 +2,7 @@ from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
 import os
+from src.logger import logging
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
@@ -13,14 +14,17 @@ app=application
 
 @app.route('/')
 def index():
+    logging.info("Entered the index page")    
     return render_template('index.html')
 
 @app.route('/predict_data',methods=['GET','POST'])
 def predict_datapoint():
     #path1=os.path.join('artifacts','trial_data.csv')
     if request.method=='GET':
+        logging.info("Entered the GET method")
         return render_template('home.html')
     else:
+        logging.info("Entered the POST method")
         data=CustomData(
             MSSubClass=request.form.get('MSSubClass'),  
             MSZoning=request.form.get('MSZoning'),
@@ -102,11 +106,14 @@ def predict_datapoint():
             SaleType=request.form.get('SaleType'), 
             SaleCondition=request.form.get('SaleCondition')
         )
+        logging.info("Acquired data from the web form")
         pred_df=data.get_data_as_dataframe()
         print(pred_df)
+        logging.info("Converted data to datafranme")
 
         predict_pipeline=PredictPipeline()
         results=predict_pipeline.predict(pred_df)
+        logging.info("Successfully completed the prediction")
         return render_template('home.html',results=int(results[0]))
         
     
