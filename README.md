@@ -110,7 +110,7 @@
 1.1. Create a directory on your drive.  
 1.2. Navigate to the directory with "cd <directory path>" in annaconda prompt.  
 1.3. Launch VS code with "code .".  
-1.4 create virtual environment with "conda create -p venv python==<version> -y".  
+1.4 create virtual environment with "conda create -p venv python -y".  
 1.5 activate environment with "conda activate venv/".  
 
 Note: I have used annaconda prompt and VS code. you can choose an IDE of your choice.
