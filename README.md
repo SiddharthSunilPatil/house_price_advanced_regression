@@ -105,6 +105,10 @@
 
 ## Installation
 
+**1. Cloning the repository
+
+1.1. Open VS code 
+
 **1. Setting up the environment using VS Code and anaconda prompt**
 
 1.1. Create a directory on your drive.  
@@ -115,7 +119,10 @@
 
 **2. Cloning the repository**
 
-2.1. 
+2.1. Use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
+" to clone repository to existing directory
+
+**3. Installing dependencies
 
 
 
