@@ -113,12 +113,12 @@
 1.4. Open new terminal and use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
 " to clone repository to existing directory.  
  
-**2. Setting up the environment**
-2.1. Navigate to clond repository with command "cd (type your repository relative path)"
+**2. Setting up the environment**  
+2.1. Navigate to cloned repository with command "cd (type your repository relative path)".  
 2.2. Create virtual environment with command "conda create -p venv python -y".  
 1.5  Activate environment with command "conda activate venv/".  
 
-**3. Installing dependencies**
+**3. Installing dependencies**  
 3.1. Use command "pip install -r requirements.txt" to install dependencies.  
 
 **4. Downloading dataset**
