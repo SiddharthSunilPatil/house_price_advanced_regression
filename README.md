@@ -107,8 +107,9 @@
 
 **1. Cloning the repository
 
-1.1. Open VS code 
-
+1.1. Create a dirctory on your drive.  
+1.1. Open anaconda prompt and navigate to the directory with the command "cd <directory path>"  
+1.2. 
 **1. Setting up the environment using VS Code and anaconda prompt**
 
 1.1. Create a directory on your drive.  
