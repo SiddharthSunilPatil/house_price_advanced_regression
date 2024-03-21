@@ -117,7 +117,7 @@
 
 2.1. Navigate to cloned repository with command "cd (type your repository relative path)".  
 2.2. Create virtual environment with command "conda create -p venv python -y".  
-1.5  Activate environment with command "conda activate venv/".  
+2.3  Activate environment with command "conda activate venv/".  
 
 **3. Installing dependencies**  
 
@@ -133,7 +133,14 @@
 5.1. Copy the relative paths for train and test data from step 4.2.    
 5.2. In the src/components/data_ingestion.py file, paste these relative paths in line 26 and 27 as shown below.  
             train_df=pd.read_csv('relative path for train dataset').  
-            test_df=pd.read_csv('relative path for test dataset').      
+            test_df=pd.read_csv('relative path for test dataset').
+5.3. Execute command "python src/components/data_ingestion.py".  
+5.4  After completion of code execution, an artifacts folder will be created with 3 files viz "concat.csv", "model.pkl" and "preprocessor.pkl"
+
+**6. Deploying the model to local server with Flask**
+
+6.1. Execute command "python application.py".  
+6.2. The application will be served on localhost and is ready to use.  
 
 
 
