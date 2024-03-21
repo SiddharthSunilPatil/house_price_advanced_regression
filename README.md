@@ -108,8 +108,11 @@
 **1. Cloning the repository
 
 1.1. Create a dirctory on your drive.  
-1.1. Open anaconda prompt and navigate to the directory with the command "cd <directory path>"  
-1.2. 
+1.2. Open anaconda prompt and navigate to the directory with the command "cd".  
+1.3. launch VS code with command "code ."
+1.4. Use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
+" to clone repository to existing directory.  
+ 
 **1. Setting up the environment using VS Code and anaconda prompt**
 
 1.1. Create a directory on your drive.  
