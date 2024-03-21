@@ -105,28 +105,31 @@
 
 ## Installation
 
-**1. Cloning the repository
+**1. Cloning the repository**
 
 1.1. Create a dirctory on your drive.  
-1.2. Open anaconda prompt and navigate to the directory with the command "cd".  
+1.2. Open anaconda prompt and navigate to the directory with the command "cd (type your directory path)".  
 1.3. launch VS code with command "code ."
-1.4. Use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
+1.4. Open new terminal and use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
 " to clone repository to existing directory.  
  
-**1. Setting up the environment using VS Code and anaconda prompt**
+**2. Setting up the environment**
+2.1. Navigate to clond repository with command "cd (type your repository relative path)"
+2.2. Create virtual environment with command "conda create -p venv python -y".  
+1.5  Activate environment with command "conda activate venv/".  
 
-1.1. Create a directory on your drive.  
-1.2. Navigate to the directory with "cd <directory path>" in annaconda prompt.  
-1.3. Launch VS code with "code .".  
-1.4  Create virtual environment with "conda create -p venv python -y".  
-1.5  Activate environment with "conda activate venv/".  
+**3. Installing dependencies**
+3.1. Use command "pip install -r requirements.txt" to install dependencies.  
 
-**2. Cloning the repository**
+**4. Downloading dataset**
+4.1. Download the dataset from "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques".  
+4.2. Create a new folder in your cloned repository and copy and paste the downloaded data to this folder.  
 
-2.1. Use command "git clone https://github.com/SiddharthSunilPatil/house_price_advanced_regression.git
-" to clone repository to existing directory
-
-**3. Installing dependencies
+**5. Training the model**
+5.1. Copy the relative paths for train and test data from step 4.2.  
+5.2. In the src/components/data_ingestion.py file, paste these relative paths in line 26 and 27 as shown below.
+            train_df=pd.read_csv('relative path for train dataset')
+            test_df=pd.read_csv('relative path for test dataset').  
 
 
 
