@@ -131,9 +131,9 @@
 **5. Training the model**  
 
 5.1. Copy the relative paths for train and test data from step 4.2.    
-5.2. In the src/components/data_ingestion.py file, paste these relative paths in line 26 and 27 as shown below.
-            train_df=pd.read_csv('relative path for train dataset')
-            test_df=pd.read_csv('relative path for test dataset').    
+5.2. In the src/components/data_ingestion.py file, paste these relative paths in line 26 and 27 as shown below.  
+            train_df=pd.read_csv('relative path for train dataset').  
+            test_df=pd.read_csv('relative path for test dataset').      
 
 
 
