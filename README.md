@@ -134,6 +134,11 @@
 
 ## Exploratory data analysis [EDA] link: https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb
 
+## Business Problem
+
+Housing price prediction is becoming an increasingly valuable tool for various stakeholders such as investors, homebuyers and government institutions, facilitating informed decision-making, risk management, and economic planning. A large number of factors influence house price negotiations and not just the number of bedrooms or total area. The aim of the project is to develop an algorithm for estimating the correct price of a house based on 80+ variables. The dataset is based on information collected from actual sales of 2919 houses in the Ames city in Iowa state.
+
+
 ## Project Approach
 
 **1. Data Ingestion:** In this phase, both test and train dataset are read from csv file. Since both train set and test set contain missing values, data is first concatenated and prepared for analysis.
