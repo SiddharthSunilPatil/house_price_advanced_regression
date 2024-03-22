@@ -4,6 +4,12 @@
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/static/house_price_pred_1.jpg
 )
 
+## Quicklinks
+[Exploratory data analysis](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
+[Notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
+[AWS deployment link](http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com)  
+[Dataset]( https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
+
 ## Setup Instructions
 
 **1. Cloning the repository**
@@ -136,12 +142,6 @@ The dataset is based on information collected from actual sales of 2919 houses i
 78. **YrSold:** Year Sold
 79. **SaleType:** Type of sale
 80. **SaleCondition:** Condition of sale
-
-## Quicklinks
-[Exploratory data analysis](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
-[Notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
-[AWS deployment link](http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com)  
-[Dataset]( https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
  
 ## Project Approach
 
