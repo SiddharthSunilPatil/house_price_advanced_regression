@@ -34,9 +34,9 @@
 5.1. Copy the relative paths for train and test data from step 4.2.    
 5.2. In the src/components/data_ingestion.py file, paste these relative paths in line 26 and 27 as shown below.  
             train_df=pd.read_csv('relative path for train dataset').  
-            test_df=pd.read_csv('relative path for test dataset').
-5.3. Execute command "python src/components/data_ingestion.py".  
-5.4  After completion of code execution, an artifacts folder will be created with 3 files viz "concat.csv", "model.pkl" and "preprocessor.pkl"
+            test_df=pd.read_csv('relative path for test dataset').  
+5.3. Execute command "python src/components/data_ingestion.py".      
+5.4  After completion of code execution, an artifacts folder will be created with 3 files viz "concat.csv", "model.pkl" and "preprocessor.pkl".  
 
 **6. Deploying the model to local server with Flask**
 
