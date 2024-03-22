@@ -1,6 +1,9 @@
 # Housing Price Advanced Regression
 **Author:** Siddharth Patil.  
 
+![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/static/house_price_pred_1.jpg
+)
+
 
 
 ### The dependent or target variables is:
