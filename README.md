@@ -138,9 +138,9 @@ The dataset is based on information collected from actual sales of 2919 houses i
 80. **SaleCondition:** Condition of sale
 
 ## Quicklinks
-[Exploratory data analysis](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)
-[Notebook]()
-[AWS deployment link](AWS deployment link: http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com)
+[Exploratory data analysis](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
+[Notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)    
+[AWS deployment link](http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com)  
 [Dataset]( https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
  
 ## Project Approach
