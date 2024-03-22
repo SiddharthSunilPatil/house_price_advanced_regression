@@ -1,5 +1,7 @@
 # Housing Price Advanced Regression
-## This Project aims to predict house prices based on 80+ features using advanced regression techniques 
+**Author:** Siddharth Patil.  
+
+
 
 ### The dependent or target variables is:
 1. **SalePrice** - The property's sale price in dollars. This is the target variable that you're trying to predict.
