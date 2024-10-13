@@ -6,7 +6,7 @@
 
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
-[AWS deployment link](http://ames-house-price-prediction-env.eba-pxy9mxps.us-east-2.elasticbeanstalk.com)  
+[AWS deployment link](http://housepriceprediction-env.eba-mengmfkt.us-east-2.elasticbeanstalk.com/)  
 [Dataset]( https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
 
 ## Setup Instructions
