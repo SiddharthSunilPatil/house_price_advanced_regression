@@ -43,19 +43,29 @@ The goal of the solution is to minimize prediction error (RMSE) and provide reli
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_001.png) |
 
 ## Project Architecture
+graph LR
+    subgraph "Training Pipeline (Development Environment)"
+    A[Data Collection] --> B[Preprocessing]
+    B --> C[Feature Engineering]
+    C --> D[Model Training]
+    D --> E["Export Artifacts<br/>(model.pkl, preprocessor.pkl)"]
+    end
 
-```mermaid
-flowchart LR
-A[Dataset CSV] --> B[EDA and Feature Engineering]
-B --> C[Preprocessing Pipeline]
-C --> D[Model Training and Tuning]
-D --> E[Model and Preprocessor Artifacts]
-E --> F[AWS S3 Storage]
-E --> G[AWS EC2 Instance]
-F --> G
-G --> H[Flask API Service]
-H --> I[Prediction Endpoint]
-I --> J[Predicted House Price]
+    E --> F[("Amazon S3 Bucket")]
+
+    subgraph "Deployment (Production Environment - EC2)"
+    F -- "Load Artifacts" --> G["Flask Application"]
+    G --> H["API Endpoints"]
+    end
+
+    subgraph "Client"
+    I[User/Requests] <--> H
+    end
+
+    %% Styling
+    style F fill:#ff9900,stroke:#232f3e,color:white
+    style G fill:#232f3e,stroke:#232f3e,color:white
+    style E fill:#f4f4f4
 
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
