@@ -1,9 +1,9 @@
 # Housing Price Advanced Regression
 **Author:** Siddharth Patil.  
 
-![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_01.png)
+![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_01.png) |
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_2.png)
-![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_3.png)
+![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_3.png) |
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_4.png)
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
