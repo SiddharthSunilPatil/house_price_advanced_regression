@@ -20,23 +20,23 @@ The goal of the solution is to minimize prediction error (RMSE) and provide reli
 
 ## Tech Stack Used
 
-**Programming & Data Analysis:** Python, NumPy, Pandas
-**Data Visualization:** Matplotlib, Seaborn
-**Machine Learning:** scikit-learn, XGBoost, CatBoost
-**Deployment:** Flask, AWS EC2
-**Version Control & CI/CD:** Git, GitHub Actions
+**1. Programming & Data Analysis:** Python, NumPy, Pandas
+**2. Data Visualization:** Matplotlib, Seaborn
+**3. Machine Learning:** scikit-learn, XGBoost, CatBoost
+**4. Deployment:** Flask, AWS EC2
+**5. Version Control & CI/CD:** Git, GitHub Actions
 
 ## Machine Learning Algorithms
 
-Linear Regression
-SGD Regressor
-Support Vector Regressor (SVR)
-K-Nearest Neighbors (KNN)
-Decision Tree Regressor
-Random Forest Regressor
-Gradient Boosting Regressor
-Gaussian Process Regressor
-Multi-layer Perceptron (MLP)
+1. Linear Regression
+2. SGD Regressor
+3. Support Vector Regressor (SVR)
+4. K-Nearest Neighbors (KNN)
+5. Decision Tree Regressor
+6. Random Forest Regressor
+7. Gradient Boosting Regressor
+8. Gaussian Process Regressor
+9. Multi-layer Perceptron (MLP)
 
 
 ## Application Screenshots
