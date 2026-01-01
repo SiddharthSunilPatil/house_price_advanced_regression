@@ -42,6 +42,21 @@ The goal of the solution is to minimize prediction error (RMSE) and provide reli
 ## Application Screenshots
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_001.png) |
 
+## Project Architecture
+
+```mermaid
+flowchart LR
+A[Dataset: Kaggle CSV] --> B[EDA + Feature Engineering]
+B --> C[Preprocessing Pipeline<br/>Imputation • Encoding • Scaling]
+C --> D[Model Training + Tuning<br/>CV • Grid/Random Search]
+D --> E[Best Model + Preprocessor<br/>Saved as Artifacts]
+E --> F[(AWS S3 Bucket<br/>Optional Storage)]
+E --> G[AWS EC2 Instance]
+F --> G
+G --> H[Flask API Service]
+H --> I[/predict endpoint]
+I --> J[Predicted House Price]
+
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
 [AWS deployment link](http://housepriceprediction-env.eba-mengmfkt.us-east-2.elasticbeanstalk.com/)  
