@@ -18,8 +18,28 @@ The proposed approach leverages:
 
 The goal of the solution is to minimize prediction error (RMSE) and provide reliable price estimates for unseen properties, thereby supporting data-driven real-estate valuation and analysis.
 
+## Tech Stack Used
+
+**Programming & Data Analysis:** Python, NumPy, Pandas
+**Data Visualization:** Matplotlib, Seaborn
+**Machine Learning:** scikit-learn, XGBoost, CatBoost
+**Deployment:** Flask, AWS EC2
+**Version Control & CI/CD:** Git, GitHub Actions
+
+## Machine Learning Algorithms
+
+Linear Regression
+SGD Regressor
+Support Vector Regressor (SVR)
+K-Nearest Neighbors (KNN)
+Decision Tree Regressor
+Random Forest Regressor
+Gradient Boosting Regressor
+Gaussian Process Regressor
+Multi-layer Perceptron (MLP)
 
 
+## Application Screenshots
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_001.png) |
 
 ## Quicklinks
