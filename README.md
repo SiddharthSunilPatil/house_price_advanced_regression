@@ -1,6 +1,25 @@
 # Housing Price Advanced Regression
 **Author:** Siddharth Patil.  
 
+## Business Problem
+
+Residential property valuation is a complex process influenced by a wide range of factors including structural attributes, construction quality, location, neighborhood characteristics, and time of sale. Accurately estimating house prices is important for stakeholders such as homebuyers, real-estate investors, financial institutions, and policy makers, as it supports informed decision-making and risk assessment.
+
+This is a supervised regression problem, where the objective is to predict the final sale price of a residential property based on 80+ numerical and categorical features describing the property and its surroundings.
+
+## Solution Proposed
+
+In this project, a machine learning–based regression system is developed to predict house sale prices using historical housing data. The solution focuses on building an end-to-end pipeline that performs data ingestion, exploratory analysis, feature engineering, model training, and prediction in a consistent and scalable manner.
+
+The proposed approach leverages:
+- Domain-aware handling of missing values, distinguishing between true absence and missing information
+- Appropriate encoding of categorical features, including ordinal and nominal variables
+- Ensemble regression models to capture non-linear relationships between property attributes and sale prices
+
+The goal of the solution is to minimize prediction error (RMSE) and provide reliable price estimates for unseen properties, thereby supporting data-driven real-estate valuation and analysis.
+
+
+
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_001.png) |
 
 ## Quicklinks
@@ -47,9 +66,6 @@
 6.1. Execute command "python application.py".  
 6.2. The application will be served on localhost and is ready to use.  
 
-## Business Problem
-
-Housing price prediction is becoming an increasingly valuable tool for various stakeholders such as investors, homebuyers and government institutions, facilitating informed decision-making, risk management, and economic planning. A large number of factors influence house price negotiations and not just the number of bedrooms or total area. The aim of the project is to develop an algorithm for estimating the correct price of a house based on 80+ variables. 
 
 ## Data
 
