@@ -20,11 +20,11 @@ The goal of the solution is to minimize prediction error (RMSE) and provide reli
 
 ## Tech Stack Used
 
-**1. Programming & Data Analysis:** Python, NumPy, Pandas.
-**2. Data Visualization:** Matplotlib, Seaborn.
-**3. Machine Learning:** scikit-learn, XGBoost, CatBoost.
-**4. Deployment:** Flask, AWS EC2.
-**5. Version Control & CI/CD:** Git, GitHub Actions.
+1. **Programming & Data Analysis:** Python, NumPy, Pandas.
+2. **Data Visualization:** Matplotlib, Seaborn.
+3. **Machine Learning:** scikit-learn, XGBoost, CatBoost.
+4. **Deployment:** Flask, AWS EC2.
+5. **Version Control & CI/CD:** Git, GitHub Actions.
 
 ## Machine Learning Algorithms
 
