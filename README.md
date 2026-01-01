@@ -3,7 +3,7 @@
 
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/static/house_price_pred_1.jpg
 )
-
+![image]()
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
 [AWS deployment link](http://housepriceprediction-env.eba-mengmfkt.us-east-2.elasticbeanstalk.com/)  
