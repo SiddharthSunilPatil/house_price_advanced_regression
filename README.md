@@ -190,7 +190,7 @@ The dataset is based on information collected from actual sales of 2919 houses i
 
 **4. Prediciton Pipeline:** This pipleline converts input data into a dataframe and loads pickle files for data transformation and model training and predicts final results.
 
-**5. Deployment:** The project is deployed on amazon elastic beanstalk as a flask application to predict house prices.
+**5. Deployment:** The project is deployed on AWS EC2 as a flask application to predict house prices.
 
 
 
