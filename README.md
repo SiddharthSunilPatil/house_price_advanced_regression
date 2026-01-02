@@ -43,7 +43,7 @@ The goal of the solution is to minimize prediction error (RMSE) and provide reli
 ![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Screenshots/Screenshot_001.png) 
 
 ## Project Architecture
-![image]() 
+![image](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/static/model_architecture.png) 
 
 ## Quicklinks
 [Exploratory data analysis / notebook](https://github.com/SiddharthSunilPatil/house_price_advanced_regression/blob/main/Notebook/housingprice.ipynb)       
