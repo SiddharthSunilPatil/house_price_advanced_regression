@@ -192,66 +192,6 @@ The dataset is based on information collected from actual sales of 2919 houses i
 
 **5. Deployment:** The project is deployed on AWS EC2 as a flask application to predict house prices.
 
-# health-api
-
-Backend API for the Health SaaS platform.
-
-## Project Purpose
-
-This repository contains the backend scaffold for a modular health application designed to support API development, business logic, safety workflows, and future agent-based orchestration.
-
-The structure is intentionally organized to support scalable development for features such as:
-- API endpoints
-- service and business logic
-- repositories and database access
-- safety and guardrail layers
-- workflow orchestration
-- multi-agent extensions in later phases
-
-## Current Status
-
-This is the initial backend scaffold for the project.  
-At this stage, the repository includes:
-- modular folder structure
-- environment setup
-- dependency management
-- Docker support
-- starter project documentation
-
-## Tech Stack
-
-- Python
-- FastAPI
-- Uvicorn
-- Docker
-- Pytest
-
-## Project Structure
-
-```bash
-health-api/
-├── src/
-│   ├── main.py
-│   ├── api/
-│   │   └── routes/
-│   ├── core/
-│   ├── agents/
-│   ├── workflows/
-│   ├── services/
-│   ├── repositories/
-│   ├── schemas/
-│   ├── db/
-│   ├── safety/
-│   ├── prompts/
-│   └── utils/
-├── tests/
-├── requirements.txt
-├── Dockerfile
-├── .env.example
-├── .gitignore
-└── README.md
-
-
 
 
 
